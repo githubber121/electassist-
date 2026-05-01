@@ -12,9 +12,13 @@ export default function ChatBubble({ message }: { message: Message }) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       className={`flex w-full ${isUser ? "justify-end" : "justify-start"} mb-6`}
+      aria-label={`${isUser ? "You" : "ElectAssist"}: ${message.content}`}
     >
       <div className={`flex max-w-[80%] md:max-w-[70%] gap-4 ${isUser ? "flex-row-reverse" : "flex-row"}`}>
-        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${isUser ? "bg-blue-600" : "bg-slate-700 border border-slate-600"}`}>
+        <div 
+          className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${isUser ? "bg-blue-600" : "bg-slate-700 border border-slate-600"}`}
+          aria-hidden="true"
+        >
           {isUser ? <User className="w-5 h-5 text-white" /> : <Bot className="w-5 h-5 text-blue-400" />}
         </div>
         

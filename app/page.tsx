@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <div className="flex-1 flex flex-col items-center justify-center p-6 relative overflow-hidden">
       {/* Background gradients */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl mix-blend-screen pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl mix-blend-screen pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl mix-blend-screen pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl mix-blend-screen pointer-events-none" aria-hidden="true" />
 
       <motion.div 
         className="max-w-3xl w-full text-center z-10"
@@ -40,8 +40,9 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+              aria-label="View Election Timeline"
             >
-              <CalendarClock className="w-5 h-5" />
+              <CalendarClock className="w-5 h-5" aria-hidden="true" />
               View Election Timeline
             </motion.button>
           </Link>
@@ -51,8 +52,9 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold transition-colors"
+              aria-label="Ask the AI Assistant"
             >
-              <MessageSquare className="w-5 h-5" />
+              <MessageSquare className="w-5 h-5" aria-hidden="true" />
               Ask the Assistant
             </motion.button>
           </Link>

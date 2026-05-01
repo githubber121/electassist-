@@ -23,13 +23,15 @@ export default function TimelinePage() {
 
       <div className="relative">
         {/* Desktop central timeline line */}
-        <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/0 via-blue-500/50 to-blue-500/0" />
+        <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/0 via-blue-500/50 to-blue-500/0" aria-hidden="true" />
 
-        <div className="space-y-8 md:space-y-12">
+        <ul className="space-y-8 md:space-y-12" aria-label="Election phases timeline">
           {electionTimeline.map((phase, index) => (
-            <TimelineCard key={phase.id} phase={phase} index={index} />
+            <li key={phase.id}>
+              <TimelineCard phase={phase} index={index} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );
